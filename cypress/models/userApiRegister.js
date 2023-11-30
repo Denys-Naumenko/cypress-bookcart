@@ -1,7 +1,7 @@
 export function userRegisterApi() {
     cy.request({
         method: "POST",
-        url: "/api/User",
+        url: Cypress.env('url').register,
         body: {
             firstname: Cypress.env('userData').username,
             lastname: Cypress.env('userData').lastname,
@@ -19,14 +19,13 @@ export let token;
 export function userLoginApi() {
     cy.request({
         method: "POST",
-        url: "/api/Login",
+        url: Cypress.env('url').login,
         body: {
             username: Cypress.env('userData').username,
             password: Cypress.env('userData').password
         }
     }).then((response) => {
         expect(response.status).to.eq(200);
-        cy.log(response.body);
         token = response.body.token;
     })
 };

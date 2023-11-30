@@ -6,6 +6,10 @@ module.exports = defineConfig({
   e2e: {
     baseUrl: "https://bookcart.azurewebsites.net",
     env: {
+      url: {
+        register: '/api/User',
+        login: '/api/Login'
+      },
       userData: {
         firstname: faker.person.firstName(),
         lastname: faker.person.lastName(),
