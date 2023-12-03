@@ -27,13 +27,14 @@ export function userLoginApi() {
     }).then((response) => {
         expect(response.status).to.eq(200);
         token = response.body.token;
+        cy.writeFile('../fixtures/userData.json', { userId: response.body.userDetails.userId });
     })
-};
+}
 
 export function setAuthToken() {
     cy.visit('', {
         onBeforeLoad: (content) => {
-            content.window.localStorage.setItem('authToken', token)
+                content.window.localStorage.setItem('authToken', token)
         }
     })
 };
