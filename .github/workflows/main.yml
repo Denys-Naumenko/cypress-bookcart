@@ -7,6 +7,6 @@ jobs:
         - name: Ger repository code
           uses: actions/checkout@v4
         - name: Install dependencies
-        run: 
+          run: npm ci 
         - name: Run the tests
-        run: npx cypress run
+          run: npx cypress run
