@@ -3,6 +3,7 @@ const { faker } = require("@faker-js/faker");
 
 
 module.exports = defineConfig({
+  projectId:"yp4yom",
   e2e: {
     baseUrl: "https://bookcart.azurewebsites.net",
     env: {
