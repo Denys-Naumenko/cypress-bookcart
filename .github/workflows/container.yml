@@ -1,0 +1,17 @@
+name: Trigger BookCart Cypress tests
+on: 
+    workflow_dispatch:
+    push:
+        branches: 
+            - main
+jobs:
+    testing:
+        runs-on: ubuntu-latest
+        container: cypress/browsers:node-20.6.1-chrome-116.0.5845.187-1-ff-117.0-edge-116.0.1938.76-1
+        steps:
+        - name: Ger repository code
+          uses: actions/checkout@v4
+        - name: Install dependencies
+          run: npm ci 
+        - name: Run the tests
+          run: npx cypress run
