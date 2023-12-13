@@ -1,6 +1,6 @@
 env:
     CYPRESS_ID: ${{secrets.CYPRESS_ID}}
-name: Trigger BookCart Cypress tests
+name: BookCart Cypress Container tests
 on: 
     workflow_dispatch:
     push:
