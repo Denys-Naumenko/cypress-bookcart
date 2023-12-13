@@ -9,4 +9,4 @@ jobs:
         - name: Install dependencies
           run: npm ci 
         - name: Run the tests
-          run: npx cypress run
+          run: npx cypress run --browser firefox
