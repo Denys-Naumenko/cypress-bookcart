@@ -1,6 +1,6 @@
 { 
   "scripts":{
-    "cy:run:bookcart": "npm run generate:report && npx cypress run",
+    "cy:run:bookcart": "npx cypress run",
     "generate:report": "npx mochawesome-merge \"cypress/results/*.json\" > mochawesome.json && npx marge mochawesome.json"
   },
   "devDependencies": {
