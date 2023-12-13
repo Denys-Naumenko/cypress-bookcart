@@ -1,3 +1,5 @@
+env:
+    CYPRESS_ID: ${{secrets.CYPRESS_ID}}
 name: Trigger BookCart Cypress tests
 on: 
     workflow_dispatch:
@@ -14,4 +16,18 @@ jobs:
         - name: Install dependencies
           run: npm ci 
         - name: Run the tests
-          run: npx cypress run
+          run: npm run cy:run:bookcart
+        - name: Generate report
+          run: npm run generate:report
+          if: failure()||success()
+        - name: Save report
+          uses: actions/upload-artifact@v3
+          with:
+            path: mochawesome-report
+            name: Test report
+          if: failure()||success()
+        - name: Get test report
+          uses: actions/download-artifact@v3
+          with:
+            name: Test report
+          if: failure()||success()
