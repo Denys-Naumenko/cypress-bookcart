@@ -8,7 +8,9 @@ module.exports = defineConfig({
     env: {
       url: {
         register: '/api/User',
-        login: '/api/Login'
+        login: '/api/Login',
+        wishlist: '/api/Wishlist',
+        book: '/api/Book'
       },
       userData: {
         firstname: faker.person.firstName(),
@@ -16,10 +18,21 @@ module.exports = defineConfig({
         username: faker.internet.userName(),
         password: faker.internet.password(),
         confirmPassword: faker.internet.password(),
-        gender: faker.person.sex()
+        gender: faker.person.sex(),
+        userId: ''
       },
     },
     setupNodeEvents(on, config) {
     },
   },
-});
+},
+  {
+    reporter: 'mochawesome',
+    reporterOptions: {
+      reportDir: 'cypress/results',
+      overwrite: false,
+      html: false,
+      json: true,
+    }
+  }
+);
