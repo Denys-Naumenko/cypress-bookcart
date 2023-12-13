@@ -1,1 +1,12 @@
-
+name: Trigger BookCart Cypress tests
+on: workflow_dispatch
+jobs:
+  testing:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Ger repository code
+      uses: actions/checkout@v4
+    - name: Install dependencies
+      run: 
+    - name: Run the tests
+      run: npx cypress run
