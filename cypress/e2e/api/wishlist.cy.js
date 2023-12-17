@@ -1,7 +1,7 @@
 /// <reference types="cypress" />
 
 import { addItemToWishlist, getWishlist, clearWishlist } from '../../models/wishlist';
-import { userRegisterApi,userLoginApi } from '../../models/userApiRegister';
+import { userRegisterApi, userLoginApi } from '../../models/userApiRegister';
 
 describe('CRUD WishList Api', () => {
 
