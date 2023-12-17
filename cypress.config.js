@@ -1,17 +1,10 @@
 const { defineConfig } = require("cypress");
-const { faker, fa } = require("@faker-js/faker");
+const { faker } = require("@faker-js/faker");
 
 
 module.exports = defineConfig({
   projectId: "yp4yom",
   e2e: {
-    reporter: 'mochawesome',
-    reporterOptions: {
-      reportDir: 'cypress/results',
-      overwrite: false,
-      html: true,
-      json: true,
-    },
     baseUrl: "https://bookcart.azurewebsites.net",
     env: {
       url: {
@@ -32,5 +25,12 @@ module.exports = defineConfig({
     },
     setupNodeEvents(on, config) {
     },
-  },
+    reporter: 'mochawesome',
+    reporterOptions: {
+      reportDir: 'cypress/results',
+      overwrite: false,
+      html: true,
+      json: true,
+    },
+  }
 });
