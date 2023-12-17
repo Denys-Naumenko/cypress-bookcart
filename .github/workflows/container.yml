@@ -28,7 +28,7 @@ jobs:
         - name: Save report
           uses: actions/upload-artifact@v3
           with:
-            path: mochawesome-report
+            path: cypress/results
             name: Test report
           if: failure()||success()
         - name: Get test report
