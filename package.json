@@ -1,7 +1,7 @@
 {
     "scripts": {
         "cy:run:bookcart": "npx cypress run",
-        "generate:report":"npx mochawesome-merge \"cypress/results/*.json\" > mochawesome.json && npx marge mochawesome.json"
+        "generate:report": "npx mochawesome-merge \"cypress/results/*.json\" > mochawesome.json && npx marge mochawesome.json"
     },
     "devDependencies": {
         "@faker-js/faker": "^8.3.1",
