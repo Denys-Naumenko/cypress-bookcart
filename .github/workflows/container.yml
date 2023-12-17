@@ -16,9 +16,9 @@ jobs:
           run: npm ci 
         - name: Run the test
           run: npm run cy:run:bookcart
-      #  - name: Generate report
-      #    run: npm run generate:report
-      #    if: failure()||success()
+        - name: Generate report
+          run: npm run generate:report
+          if: failure()||success()
       #  - name: Save report
       #    uses: actions/upload-artifact@v3
       #    with:
