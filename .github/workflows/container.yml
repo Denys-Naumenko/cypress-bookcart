@@ -19,14 +19,14 @@ jobs:
         - name: Generate report
           run: npm run generate:report
           if: failure()||success()
-      #  - name: Save report
-      #    uses: actions/upload-artifact@v3
-      #    with:
-      #      path: mochawesome-report
-      #      name: Test report
-      #    if: failure()||success()
-      #  - name: Get test report
-      #    uses: actions/download-artifact@v3
-      #    with:
-      #      name: Test report
-      #    if: failure()||success()
+        - name: Save report
+          uses: actions/upload-artifact@v3
+          with:
+            path: mochawesome-report
+            name: Test report
+          if: failure()||success()
+        - name: Get test report
+          uses: actions/download-artifact@v3
+          with:
+            name: Test report
+          if: failure()||success()
